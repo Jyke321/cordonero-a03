@@ -19,20 +19,55 @@ public class Solution25 {
     private static final Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
-        //get user input from a function
+        //get password form user input
+        String password = getUserInput();
         //get an int indicating password strength from the passwordValidator function
+        int passwordStrength = passwordValidator(password);
         //convert the integer to a string passwordStrength
+        String buffer;
+        switch (passwordStrength) {
+            case 1:
+                buffer = "very weak password.";
+                break;
+            case 2:
+                buffer = "weak password.";
+                break;
+            case 3:
+                buffer = "strong password.";
+                break;
+            case 4:
+                buffer = "very strong password.";
+                break;
+            default:
+                buffer = "password of unknown strength.";
+        }
         //display "The password 'password' is a _(passwordStrength)_ password
+        System.out.println("The password '" + password + "' is a " + buffer);
     }
 
-    private String getUserInput() {
-        //prompt user for a password and return it
+    private static String getUserInput() {
+        System.out.print("Enter a password: ");
+        return in.nextLine();
     }
     public static int passwordValidator(String password) {
         //make a variable to hold the return value and initialize it to 0 (yes this how I actually think)
+        int retVal = 0;
         //create variable for number of characters
-        //figure out what password has i.e. numbers,characters, etc and flag them with booleans
+        int numChar = password.length();
+        //figure out what password has i.e. numbers,characters, etc. and flag them with booleans
+        boolean hasNumbers = password.matches(".*\\d.*");
+        boolean hasCharacters = password.matches(".*[a-zA-Z].*");
+        boolean hasSpecialCharacters = password.matches(".*\\W.*");
         //use if statements to decipher password strength
+        if (hasNumbers)
+            retVal += 1;
+        if (hasCharacters)
+            retVal += 2;
+        if (retVal == 3 && numChar<8)
+            retVal = 2;
+        if (retVal==3 && hasSpecialCharacters)
+            retVal = 4;
         //return the password strength as a number from 0-4
+        return retVal;
     }
 }
