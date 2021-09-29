@@ -5,23 +5,7 @@ package baseline;
  *  Copyright 2021 Jacob Cordonero
  */
 
-/*
-In previous programs, you asked the user for repeated input by writing the input statements multiple times.
-But it’s more efficient to use loops to deal with repeated input.
-
-Write a program that prompts the user for five numbers and computes the total of the numbers.
-
-Example Output
-Enter a number: 1
-Enter a number: 2
-Enter a number: 3
-Enter a number: 4
-Enter a number: 5
-The total is 15.
-Constraints
-The prompting must use repetition, such as a counted loop, not three separate prompts.
- */
-
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Solution28 {
@@ -29,22 +13,26 @@ public class Solution28 {
 
     public static void main(String[] args) {
         //create an array list to store the 5 numbers
-
+        ArrayList fiveNumbers = new ArrayList();
         //use a loop to request the data for each array element
         // from the user via a function
-
+        for (int i=0; i<5; i++)
+            fiveNumbers.add(i,getNumberFromUser());
         //send the array list to a function to get the sum
+        int sum = getSumFromArrayList(fiveNumbers);
         //print the sum
+        System.out.println("The total is " + sum + ".");
     }
 
     private static int getNumberFromUser() {
         System.out.print("Enter a number: ");
         return Integer.parseInt(in.nextLine());
-        //oops I did logic
     }
-    public getSumFromArrayList(){
-        //thinking about, I think array list already has a class for this,
-        //if not this function can be useful
+    public static int getSumFromArrayList(ArrayList array){
+        int sum = 0;
+        for (int i=0; i<5; i++) {
+            sum += (int) array.get(i);
+        }
+        return sum;
     }
-    //seriously though, this exercises is either unusually easy or I'm going to mess up somewhere
 }
