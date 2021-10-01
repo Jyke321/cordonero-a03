@@ -10,6 +10,10 @@ class Solution29Test {
 
     @Test
     public void getNumberOfYearsToDoubleInvestmentBasedOnUserInputtedRate() {
-        assertEquals(18,Solution29.calculateYearsToDoubleInvestment(4));
+        assertEquals(18,Solution29.sol.calculateYearsToDoubleInvestment(4));
+    }
+    @Test
+    void testGetNumberOfYearsToDoubleInvestmentBasedOnUserInputtedRateBeing0() {
+        //assertThrows(ArithmeticException e,.sol.calculateYearsToDoubleInvestment(0));
     }
 }

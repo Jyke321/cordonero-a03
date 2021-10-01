@@ -9,24 +9,25 @@ import java.util.Scanner;
 
 public class Solution27 {
     private static final Scanner in = new Scanner(System.in);
+    static Solution27 sol = new Solution27();
 
     public static void main(String[] args) {
         //prompt the user for a first name, last name, employee id, and zipcode
         //get user input from a function for each data
-        String firstName = getUserInput("Enter the first name: ");
-        String lastName = getUserInput("Enter the last name: ");
-        String zipCode = getUserInput("Enter the ZIP code: ");
-        String employeeID = getUserInput("Enter the employee ID: ");
+        String firstName = sol.getUserInput("Enter the first name: ");
+        String lastName = sol.getUserInput("Enter the last name: ");
+        String zipCode = sol.getUserInput("Enter the ZIP code: ");
+        String employeeID = sol.getUserInput("Enter the employee ID: ");
         //call the validateInput function giving it all the data
-        String buffer = validateInput(firstName,lastName,zipCode,employeeID);
+        String buffer = sol.validateInput(firstName,lastName,zipCode,employeeID);
         //print the String retrieved from validateInput
         System.out.println(buffer);
     }
-    private static String getUserInput(String prompt) {
+    private String getUserInput(String prompt) {
         System.out.print(prompt);
         return in.nextLine();
     }
-    public static String validateInput(String firstName, String lastName,
+    public String validateInput(String firstName, String lastName,
                                        String zipCode, String employeeID) {
         //create a string to hold whether an error occurred
         String buffer = "";
@@ -44,7 +45,7 @@ public class Solution27 {
             buffer = "There were no errors found.";
         return buffer;
     }
-    public static String validateFirstName (String name) {
+    public String validateFirstName (String name) {
         //create an empty string
         String buffer = "";
         //determine if first name is at least 2 characters
@@ -59,7 +60,7 @@ public class Solution27 {
         //return the concatenated string
         return buffer;
     }
-    public static String validateLastName (String name) {
+    public String validateLastName (String name) {
         //create an empty string
         String buffer = "";
         //determine if last name is empty
@@ -74,7 +75,7 @@ public class Solution27 {
         //return the concatenated string
         return buffer;
     }
-    public static String validateEmployeeId (String id) {
+    public String validateEmployeeId (String id) {
         //create an empty string
         String buffer = "";
         //determine if employee id is in format AA-1234
@@ -93,7 +94,7 @@ public class Solution27 {
         //return the concatenated string
         return buffer;
     }
-    public static String validateZipCode (String zipCode) {
+    public String validateZipCode (String zipCode) {
         //create an empty string
         String buffer = "";
         //determine if the ZIP code is only numbers
@@ -104,7 +105,7 @@ public class Solution27 {
         //return the concatenated string
         return buffer;
     }
-    public static boolean containsNonNumbers(String str) {
+    public boolean containsNonNumbers(String str) {
         //create boolean to determine if string contains non-number
         boolean nonNumber = false;
         for (int i=0; i<str.length(); i++) {

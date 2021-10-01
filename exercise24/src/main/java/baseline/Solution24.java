@@ -11,17 +11,18 @@ import java.util.Scanner;
 public class Solution24 {
     //create Scanner to take in user input
     private static final Scanner in = new Scanner(System.in);
+    static Solution24 app = new Solution24();
     public static void main(String[] args) {
         //prompt the user for both input strings
-        String[] userInput = getUserInput();
+        String[] userInput = app.getUserInput();
 
         //then display the output as shown in the example that follows
         //"note" and "tone" are anagrams **replace note and tone with user input**
         System.out.println("\"" + userInput[0] + "\" and \"" + userInput[1] + "\" are"
-                + ((isAnagram(userInput[0], userInput[1])) ? " " : " not ") + "anagrams.");
+                + ((app.isAnagram(userInput[0], userInput[1])) ? " " : " not ") + "anagrams.");
     }
 
-    private static String[] getUserInput() {
+    private String[] getUserInput() {
         //create a string array to hold in the input
         String[] buffer = new String[2];
         System.out.print("Enter two strings and I'll tell you if they are anagrams:\n" +
@@ -32,7 +33,7 @@ public class Solution24 {
         return buffer;
     }
 
-    public static boolean isAnagram(String word1, String word2) {
+    public boolean isAnagram(String word1, String word2) {
         //determines if two words are anagrams of each other
         //first arrange both words in alphabetical order
         word1 = alphabetize(word1);
@@ -42,7 +43,7 @@ public class Solution24 {
         //if they are not equal return false
         return word1.equals(word2);
     }
-    public static String alphabetize(String word) {
+    public String alphabetize(String word) {
         char[] buffer = word.toCharArray();
         Arrays.sort(buffer);
         return String.valueOf(buffer);

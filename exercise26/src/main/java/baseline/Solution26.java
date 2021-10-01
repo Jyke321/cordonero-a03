@@ -15,13 +15,15 @@ import java.util.Scanner;
 //n = -(1/30) * log(1 + b/p * (1 - (1 + i)^30)) / log(1 + i)
 public class Solution26 {
     private static final Scanner in = new Scanner(System.in);
+    static Solution26 sol = new Solution26();
+
     public static void main(String[] args) {
         //create a credit card object to store the input retrieved from the user (input received from a function)
-        PaymentCalculator object = getUserInput();
+        PaymentCalculator object = sol.getUserInput();
         //display the months to pay off the card using the PaymentCalculator class calculateMonths... method
         System.out.println("It will take you "+ object.calculateMonthsUntilPaidOff() +" months to pay off this card.");
     }
-    private static PaymentCalculator getUserInput() {
+    private PaymentCalculator getUserInput() {
         //get user input and return it a PaymentCalculator object
         double balance;
         double apr;
@@ -32,7 +34,6 @@ public class Solution26 {
         apr = in.nextDouble();
         System.out.print("What is the monthly payment you can make? ");
         monthlyPayment = in.nextDouble();
-        PaymentCalculator obj = new PaymentCalculator(balance, apr, monthlyPayment);
-        return obj;
+        return new PaymentCalculator(balance, apr, monthlyPayment);
     }
 }

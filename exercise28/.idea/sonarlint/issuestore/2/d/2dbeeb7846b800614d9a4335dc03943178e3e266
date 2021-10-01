@@ -1,11 +1,3 @@
 
-E
-java:S3740"/Provide the parametrized type for this generic.(È–ƒ°
-E
-java:S3740"/Provide the parametrized type for this generic.(È–ƒ°
-J
-java:S3740"/Provide the parametrized type for this generic.(ó“õÿÿÿÿÿ
-N	java:S106"9Replace this use of System.out or System.err by a logger.(ş•ïÊ
-N	java:S106"9Replace this use of System.out or System.err by a logger.(ÖáõÓ
-€
-java:S1319"eThe type of "array" should be an interface such as "List" rather than the implementation "ArrayList".(ó“õÿÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ş•ïÊ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ÖáõÓ

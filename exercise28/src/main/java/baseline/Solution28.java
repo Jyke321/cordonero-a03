@@ -6,32 +6,34 @@ package baseline;
  */
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Solution28 {
     private static final Scanner in = new Scanner(System.in);
+    static Solution28 sol = new Solution28();
 
     public static void main(String[] args) {
         //create an array list to store the 5 numbers
-        ArrayList fiveNumbers = new ArrayList();
+        ArrayList<Integer> fiveNumbers = new ArrayList<>();
         //use a loop to request the data for each array element
         // from the user via a function
         for (int i=0; i<5; i++)
-            fiveNumbers.add(i,getNumberFromUser());
+            fiveNumbers.add(i,sol.getNumberFromUser());
         //send the array list to a function to get the sum
-        int sum = getSumFromArrayList(fiveNumbers);
+        int sum = sol.getSumFromArrayList(fiveNumbers);
         //print the sum
         System.out.println("The total is " + sum + ".");
     }
 
-    private static int getNumberFromUser() {
+    private int getNumberFromUser() {
         System.out.print("Enter a number: ");
         return Integer.parseInt(in.nextLine());
     }
-    public static int getSumFromArrayList(ArrayList array){
+    public int getSumFromArrayList(List<Integer> array){
         int sum = 0;
         for (int i=0; i<5; i++) {
-            sum += (int) array.get(i);
+            sum += array.get(i);
         }
         return sum;
     }

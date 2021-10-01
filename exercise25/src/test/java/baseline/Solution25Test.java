@@ -8,7 +8,7 @@ class Solution25Test {
 
     @Test
     void passwordValidator() {
-        assertEquals(1,Solution25.passwordValidator("12345"));
-        assertEquals(0,Solution25.passwordValidator("**$**"));
+        assertEquals(1,Solution25.app.passwordValidator("12345"));
+        assertEquals(0,Solution25.app.passwordValidator("**$**"));
     }
 }

@@ -13,6 +13,6 @@ class Solution28Test {
     void getSumFromArrayListTest() {
         ArrayList array = new ArrayList(
                 Arrays.asList(1,2,3,4,5));
-        assertEquals(15,Solution28.getSumFromArrayList(array));
+        assertEquals(15,Solution28.sol.getSumFromArrayList(array));
     }
 }

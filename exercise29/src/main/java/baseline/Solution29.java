@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class Solution29 {
     private static final Scanner in = new Scanner(System.in);
+    static Solution29 sol = new Solution29();
 
     public static void main(String[] args) {
         //get user input and do math to it from a function
@@ -25,10 +26,10 @@ public class Solution29 {
                 System.out.print("What is the rate of return? ");
                 input = Integer.parseInt(in.nextLine());
                 //then try 72 / user input
-                input = calculateYearsToDoubleInvestment(input);
+                input = sol.calculateYearsToDoubleInvestment(input);
                 break;
             }
-        //catch { literally any error, but mostly not integer input and divide by zero }
+        //catch literally any error, but mostly not integer input and divide by zero
             catch (Exception e) {
                 System.out.println("Sorry. That's not a valid input.");
             }
@@ -37,7 +38,7 @@ public class Solution29 {
         return input;
     }
 
-    public static int calculateYearsToDoubleInvestment(int input) throws ArithmeticException {
+    public int calculateYearsToDoubleInvestment(int input) throws ArithmeticException {
         return 72 / input;
     }
 }

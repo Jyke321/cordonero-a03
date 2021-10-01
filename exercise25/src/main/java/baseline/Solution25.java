@@ -17,39 +17,30 @@ import java.util.Scanner;
 
 public class Solution25 {
     private static final Scanner in = new Scanner(System.in);
+    static Solution25 app = new Solution25();
 
     public static void main(String[] args) {
         //get password form user input
-        String password = getUserInput();
+        String password = app.getUserInput();
         //get an int indicating password strength from the passwordValidator function
-        int passwordStrength = passwordValidator(password);
+        int passwordStrength = app.passwordValidator(password);
         //convert the integer to a string passwordStrength
-        String buffer;
-        switch (passwordStrength) {
-            case 1:
-                buffer = "very weak password.";
-                break;
-            case 2:
-                buffer = "weak password.";
-                break;
-            case 3:
-                buffer = "strong password.";
-                break;
-            case 4:
-                buffer = "very strong password.";
-                break;
-            default:
-                buffer = "password of unknown strength.";
-        }
+        String buffer = switch (passwordStrength) {
+            case 1 -> "very weak password.";
+            case 2 -> "weak password.";
+            case 3 -> "strong password.";
+            case 4 -> "very strong password.";
+            default -> "password of unknown strength.";
+        };
         //display "The password 'password' is a _(passwordStrength)_ password
         System.out.println("The password '" + password + "' is a " + buffer);
     }
 
-    private static String getUserInput() {
+    private String getUserInput() {
         System.out.print("Enter a password: ");
         return in.nextLine();
     }
-    public static int passwordValidator(String password) {
+    public int passwordValidator(String password) {
         //make a variable to hold the return value and initialize it to 0 (yes this how I actually think)
         int retVal = 0;
         //create variable for number of characters

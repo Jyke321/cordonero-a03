@@ -8,11 +8,11 @@ class Solution24Test {
 
     @Test
     void isAnagram() {
-        assertEquals(true,Solution24.isAnagram("note","tone"));
+        assertEquals(true,Solution24.app.isAnagram("note","tone"));
     }
 
     @Test
     void alphabetize() {
-        assertEquals("enot",Solution24.alphabetize("note"));
+        assertEquals("enot",Solution24.app.alphabetize("note"));
     }
 }
