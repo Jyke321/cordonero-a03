@@ -42,35 +42,41 @@ public class Solution31 {
 
     public static void main(String[] args) {
         //prompt user for age and resting heart rate
-
+        int age = sol.getNumberFromUser("What is your age? ");
+        int heartRate = sol.getNumberFromUser("What is your resting heart rate? ");
         //call a function that uses the age and resting heart rate
         //to create a chart of their heart rate based off of intensity
-
+        sol.printOutKarvonenHeartRateCHart(age,heartRate);
     }
     public void printOutKarvonenHeartRateCHart(int age, int heartRate) {
         //print the resting heart and age
         //print the top of the table with the label and "---------" lines
+        System.out.println("Resting Pulse: "+ heartRate +"        Age: " + age);
+        System.out.println("""
 
+                Intensity    | Rate
+                -------------|--------""");
         //start the loop with initial value 55, condition until 95 or 100, and increment by 5
-
+        for (int i=55; i<100; i+=5){
             //get the target heart rate from a function
-
+            int targetHeartRate = getTargetHeartRate(age, heartRate, i/100.0);
             //print the intensity and target heart rate in the table format
-
+            System.out.println(i + "%          | "+ targetHeartRate +" bpm");
+        }
     }
 
-    public int getTargetHeartRate(int age, int heartRate, int intensity) {
+    public int getTargetHeartRate(int age, int restingHR, double intensity) {
         //use the formula TargetHeartRate = (((220 − age) − restingHR) × intensity) + restingHR
-        return 0;
+        return (int) Math.round((((220 - age) - restingHR) * intensity) + restingHR);
     }
     private int getNumberFromUser(String prompt) {
         while (true) {
             try {
                 System.out.print(prompt);
-                return in.nextInt();
-            } catch (Exception e) {
+                return Integer.parseInt(in.nextLine());//oh, that's why we use parse int, lmao, it was funny seeing it loop forever and forever when I entered a non number
+            } catch (IllegalArgumentException e) {
                 System.out.println("Please enter a number.");
             }
         }
-    } //I'm sorry it's really hard to not just fill getting input out
+    }
 }
