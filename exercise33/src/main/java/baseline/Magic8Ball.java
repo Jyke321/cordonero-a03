@@ -12,7 +12,8 @@ public class Magic8Ball {
 
     public String getEightBallFortune() {
         //get a random number
+        int index = rand.nextInt(4);
         //return the string from the corresponding list index
-        return "";
+        return answers[index];
     }
 }

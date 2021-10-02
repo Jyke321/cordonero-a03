@@ -91,7 +91,7 @@ public class Solution32 {
     }
 
     public int getRandomNumberToGuess(int difficulty) {
-        return rand.nextInt((int) Math.pow(10,difficulty));
+        return rand.nextInt((int) Math.pow(10,difficulty))+1;
     }
 
     private char getWhetherUserWantsToContinue() {

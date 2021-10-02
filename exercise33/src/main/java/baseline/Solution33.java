@@ -23,11 +23,16 @@ The value should be chosen randomly using a pseudo random number generator.
 Store the possible choices in a list and select one at random.
  */
 
+import java.util.Scanner;
+
 public class Solution33 {
+    private static final Scanner in = new Scanner(System.in);
     public static void main(String[] args) {
-     //prompt user for their question
-
-     //get response from magic eight-ball
-
+        //prompt user for their question
+        System.out.print("What's your question?\n> ");
+        in.nextLine();
+        //get response from magic eight-ball
+        Magic8Ball eightBall = new Magic8Ball();
+        System.out.println(eightBall.getEightBallFortune());
     }
 }
