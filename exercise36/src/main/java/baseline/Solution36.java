@@ -6,21 +6,9 @@ package baseline;
  */
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 /*
-Statistics is important in our field. When measuring response times or rendering times,
-it’s helpful to collect data so you can easily spot abnormalities.
-For example, the standard deviation helps you determine which values are outliers
-and which values are within normal ranges.
-
-Write a program that prompts for response times from a website in milliseconds.
-It should keep asking for values until the user enters “done.”
-
-The program should print the average time (mean), the minimum time,
-the maximum time, and the population standard deviation.
-
 Example Output
 Enter a number: 100
 Enter a number: 200
@@ -44,14 +32,35 @@ public class Solution36 {
 
     public static void main(String[] args) {
         //create an Array list of integers to hold user input
-
+        ArrayList<Integer> array = new ArrayList<>();
+        StatisticsHandler stats = new StatisticsHandler();
+        String input = "";
         //make a loop to get input from user that stops when "done" is inputted
-
+        while (input.compareTo("done")!=0) {
+            System.out.print("Enter a number: ");
+            input = in.nextLine();
             //validate if input is a number, if so add to list
-
+            if (stats.validateInputIsNumber(input))
+                array.add(Integer.parseInt(input));
+        }
         //calculate the average, max, min, and std with statisticsHandler
-
+        double average = stats.average(array);
+        int max = stats.max(array);
+        int min = stats.min(array);
+        double std = stats.std(array);
+        //print out the array
+        int i=0;
+        for (Integer number:array) {
+            if (i<1)
+                System.out.print("Numbers: " + number);
+            else
+                System.out.print(", " + number);
+            i++;
+        }
         //display the average, max, min, and std with statisticsHandler
-
+        System.out.println("\nThe average is "+ average +"\n" +
+                "The minimum is "+min+"\n" +
+                "The maximum is "+max+"\n" +
+                "The standard deviation is " + std);
     }
 }
