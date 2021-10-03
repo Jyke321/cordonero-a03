@@ -35,12 +35,17 @@ public class Solution35 {
 
     public static void main(String[] args) {
         //create ArrayListManipulator object
-
+        ArrayListManipulator list = new ArrayListManipulator();
         //start a loop that ends when user inputs ""
+        String input = " ";
+        while (!input.isEmpty()) {
             //prompt the user for a name
-
+            System.out.print("Enter a name: ");
+            input = in.nextLine();
             //add it to the array list
-
+            list.addToArrayList(input);
+        }
         //pick a winner with object
+        System.out.println("The winner is... " + list.pickWinnerFromArrayList() + ".");
     }
 }
