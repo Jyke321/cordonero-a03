@@ -32,16 +32,52 @@ public class Solution39 {
         map.put("separationDate","2016-12-31");
         list.add(map);
         //make next hashmap for next person and so on
-
+        map.clear();
+        map.put("fName","Tou");
+        map.put("lName","Xiong");
+        map.put("position","Software Engineer");
+        map.put("separationDate","2016-10-05");
+        list.add(map);
+        //next person
+        map.clear();
+        map.put("fName","Michaela");
+        map.put("lName","Michaelson");
+        map.put("position","District Manager");
+        map.put("separationDate","2015-12-19");
+        list.add(map);
+        //next person
+        map.clear();
+        map.put("fName","Jake");
+        map.put("lName","Jacobson");
+        map.put("position","Programmer");
+        list.add(map);
+        //next person
+        map.clear();
+        map.put("fName","Jacquelyn");
+        map.put("lName","Jackson");
+        map.put("position","DBA");
+        list.add(map);
+        //next person
+        map.clear();
+        map.put("fName","Sally");
+        map.put("lName","Webber");
+        map.put("position","Web Developer");
+        map.put("separationDate","2015-12-18");
+        list.add(map);
         //return the list
         return list;
     }
+
     public ArrayList<HashMap> sortListByLastName(ArrayList<HashMap> list) {
         //make some sort of sorting algorithm
         //maybe make a list of just the last names and sort those
         //and then move the hash maps accordingly, not sure really
+        //lets try a cs1 sorting algorithm
+
+
         return new ArrayList<HashMap>();
     }
+
     public void displayListOfHashMapsInTabularFormat(ArrayList<HashMap> list) {
         //display top of table
 
