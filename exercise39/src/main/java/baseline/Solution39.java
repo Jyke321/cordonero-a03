@@ -7,6 +7,7 @@ package baseline;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class Solution39 {
@@ -73,9 +74,18 @@ public class Solution39 {
         //maybe make a list of just the last names and sort those
         //and then move the hash maps accordingly, not sure really
         //lets try a cs1 sorting algorithm
+        int n = list.size();
+        for (int i =1; i<n; i++) {
+            String key = (String) list.get(i).get("lName");
+            int j = i - 1;
 
-
-        return new ArrayList<HashMap>();
+            while (j >= 0 && (list.get(j).get("lName").toString().compareTo(key)>0)) {
+                Collections.swap(list,j+1,j);
+                j = j-1;
+            }
+        }
+        //hopefully this works
+        return list;
     }
 
     public void displayListOfHashMapsInTabularFormat(ArrayList<HashMap> list) {
