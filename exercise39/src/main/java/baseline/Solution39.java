@@ -30,47 +30,47 @@ public class Solution39 {
         //make list
         ArrayList<HashMap<String,String>> list = new ArrayList<>();
         //make first hashmap of data and add it to list
-        HashMap<String,String> map = new HashMap<>();
-        map.put(F_NAME,"John");
-        map.put(L_NAME,"Johnson");
-        map.put(POSITION,"Manager");
-        map.put(SEP_DATE,"2016-12-31");
-        list.add(map);
+        HashMap<String,String> map1 = new HashMap<>();
+        map1.put(F_NAME,"John");
+        map1.put(L_NAME,"Johnson");
+        map1.put(POSITION,"Manager");
+        map1.put(SEP_DATE,"2016-12-31");
+        list.add(map1);
         //make next hashmap for next person and so on
-        map.clear();
-        map.put(F_NAME,"Tou");
-        map.put(L_NAME,"Xiong");
-        map.put(POSITION,"Software Engineer");
-        map.put(SEP_DATE,"2016-10-05");
-        list.add(map);
+        HashMap<String,String> map2 = new HashMap<>();
+        map2.put(F_NAME,"Tou");
+        map2.put(L_NAME,"Xiong");
+        map2.put(POSITION,"Software Engineer");
+        map2.put(SEP_DATE,"2016-10-05");
+        list.add(map2);
         //next person
-        map.clear();
-        map.put(F_NAME,"Michaela");
-        map.put(L_NAME,"Michaelson");
-        map.put(POSITION,"District Manager");
-        map.put(SEP_DATE,"2015-12-19");
-        list.add(map);
+        HashMap<String,String> map3 = new HashMap<>();
+        map3.put(F_NAME,"Michaela");
+        map3.put(L_NAME,"Michaelson");
+        map3.put(POSITION,"District Manager");
+        map3.put(SEP_DATE,"2015-12-19");
+        list.add(map3);
         //next person
-        map.clear();
-        map.put(F_NAME,"Jake");
-        map.put(L_NAME,"Jacobson");
-        map.put(POSITION,"Programmer");
-        map.put(SEP_DATE,"");
-        list.add(map);
+        HashMap<String,String> map4 = new HashMap<>();
+        map4.put(F_NAME,"Jake");
+        map4.put(L_NAME,"Jacobson");
+        map4.put(POSITION,"Programmer");
+        map4.put(SEP_DATE,"");
+        list.add(map4);
         //next person
-        map.clear();
-        map.put(F_NAME,"Jacquelyn");
-        map.put(L_NAME,"Jackson");
-        map.put(POSITION,"DBA");
-        map.put(SEP_DATE,"");
-        list.add(map);
+        HashMap<String,String> map5 = new HashMap<>();
+        map5.put(F_NAME,"Jacquelyn");
+        map5.put(L_NAME,"Jackson");
+        map5.put(POSITION,"DBA");
+        map5.put(SEP_DATE,"");
+        list.add(map5);
         //next person
-        map.clear();
-        map.put(F_NAME,"Sally");
-        map.put(L_NAME,"Webber");
-        map.put(POSITION,"Web Developer");
-        map.put(SEP_DATE,"2015-12-18");
-        list.add(map);
+        HashMap<String,String> map6 = new HashMap<>();
+        map6.put(F_NAME,"Sally");
+        map6.put(L_NAME,"Webber");
+        map6.put(POSITION,"Web Developer");
+        map6.put(SEP_DATE,"2015-12-18");
+        list.add(map6);
         //return the list
         return list;
     }
@@ -100,9 +100,9 @@ public class Solution39 {
                 "--------------------|-------------------|----------------");
         //then use a loop to display rest of list
         for (HashMap<String,String> map:list) {
-            System.out.println(map.get(F_NAME) + " " +
-                    map.get(L_NAME) + " | " + map.get(POSITION) +
-                    " | " + map.get(SEP_DATE));
+            String tempName = map.get(F_NAME) + " " + map.get(L_NAME);
+            System.out.printf("%-19s | %-17s | %s%n",
+                    tempName,map.get(POSITION),map.get(SEP_DATE));
         }
     }
 }
