@@ -25,16 +25,15 @@ Ensure that the generated password is random.
 Ensure that there are at least as many letters as there are special characters and numbers.
  */
 
-import java.util.Scanner;
-
 public class Solution37 {
 
     public static void main(String[] args) {
+        PasswordGenerator pass = new PasswordGenerator();
         //prompt user for input
-
+        pass.getUserInputForPasswordSpecifications();
         //generate the password
-
+        String password = pass.passwordGenerator();
         //display the password
-
+        System.out.println("Your password is " + password);
     }
 }
