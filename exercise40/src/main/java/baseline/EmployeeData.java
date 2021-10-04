@@ -96,7 +96,11 @@ public class EmployeeData {
                 List<HashMap<String, String>> list, String searchKey) {
             //use a for loop to go through each it and add them to a new list
             //if a portion of their first or last name matches
-
-            return new ArrayList<>();
+            List<HashMap<String, String>> matchList =  new ArrayList<>();
+            for (HashMap<String,String> map:list) {
+                if (map.get(F_NAME).contains(searchKey) || map.get(L_NAME).contains(searchKey))
+                    matchList.add(map);
+            }
+            return matchList;
         }
 }
